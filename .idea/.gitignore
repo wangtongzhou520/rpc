@@ -1,8 +1,22 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
+.DS_Store
+.project
+.classpath
+bootstapt
+.settings/
+.idea/
+target/
+tags
+logs/
+assembly/
+conf/
+*.log
+*.data
+webRoot/
+*.iml
+*.tar.gz
+*.pid
+.checkstyle
+.fbIncludeFilterFile
+.flattened-pom.xml
+/okr-adapter/src/main/java/com/zto/lbd/pipeline/test.http
+*.gitignore
