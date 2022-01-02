@@ -1,8 +1,8 @@
-package org.rpc.provider;
+package org.rpc.v1.provider;
 
 import org.rpc.api.HelloService;
-import org.rpc.provider.service.HelloServiceImpl;
-import org.rpc.provider.utils.RpcProxyService;
+import org.rpc.v1.provider.service.HelloServiceImpl;
+import org.rpc.v1.provider.utils.RpcProxyService;
 
 /**
  * 服务提供者
