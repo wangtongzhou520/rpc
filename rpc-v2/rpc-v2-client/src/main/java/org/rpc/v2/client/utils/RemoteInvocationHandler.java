@@ -1,4 +1,4 @@
-package org.rpc.client.utils;
+package org.rpc.v2.client.utils;
 
 import org.rpc.common.entity.RpcRequest;
 import org.rpc.common.entity.RpcResponse;

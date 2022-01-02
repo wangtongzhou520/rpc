@@ -1,4 +1,4 @@
-package org.rpc.client.utils;
+package org.rpc.v2.client.utils;
 
 import java.lang.reflect.Proxy;
 

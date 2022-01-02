@@ -1,8 +1,8 @@
-package org.rpc.client;
+package org.rpc.v2.client;
 
 import lombok.extern.slf4j.Slf4j;
 import org.rpc.api.HelloService;
-import org.rpc.client.utils.RpcClientProxy;
+import org.rpc.v2.client.utils.RpcClientProxy;
 
 /**
  * rpc client
