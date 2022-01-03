@@ -2,6 +2,9 @@ package org.rpc.v2.provider.service;
 
 import org.rpc.api.User;
 import org.rpc.api.UserService;
+import org.rpc.v2.provider.utils.RpcService;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * user
@@ -9,6 +12,7 @@ import org.rpc.api.UserService;
  * @author wangtongzhou
  * @since 2022-01-01 16:10
  */
+@RpcService(UserService.class)
 public class UserServiceImpl implements UserService {
     @Override
     public User queryUserInfo() {

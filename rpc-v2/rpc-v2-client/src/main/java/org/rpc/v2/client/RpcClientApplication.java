@@ -7,7 +7,7 @@ import org.rpc.v2.client.utils.RpcClientProxy;
 /**
  * rpc client
  *
- * @author wangtongzhou 
+ * @author wangtongzhou
  * @since 2022-01-02 10:38
  */
 @Slf4j
@@ -17,7 +17,7 @@ public class RpcClientApplication {
         RpcClientProxy rpcClientProxy = new RpcClientProxy();
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class, "127.0.0.1",
                 8888);
-        String result=helloService.sayHello();
+        String result = helloService.sayHello();
         log.info(result);
     }
 }

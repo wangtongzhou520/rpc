@@ -1,8 +1,10 @@
 package org.rpc.v2.provider.utils;
 
+import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.rpc.common.entity.RpcRequest;
 import org.rpc.common.entity.RpcResponse;
+import org.springframework.util.ObjectUtils;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -10,11 +12,13 @@ import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 反射执行实际方法调用
  *
- * @author wangtongzhou 
+ * @author wangtongzhou
  * @since 2022-01-02 08:26
  */
 @Slf4j
@@ -22,10 +26,10 @@ public class ProcessorHandler implements Runnable {
 
     private Socket socket;
 
-    private Object service;
+    private Map<String, Object> serviceMap;
 
-    public ProcessorHandler(Socket socket, Object service) {
-        this.service = service;
+    public ProcessorHandler(Socket socket, Map<String, Object> serviceMap) {
+        this.serviceMap = serviceMap;
         this.socket = socket;
     }
 
@@ -36,6 +40,13 @@ public class ProcessorHandler implements Runnable {
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
             //从输入流读取参数
             RpcRequest rpcRequest = (RpcRequest) inputStream.readObject();
+            //从参数中获取类名
+            String serviceName = rpcRequest.getInterfaceName();
+            //判断该类是否在服务端实现
+            Object service = serviceMap.get(serviceName);
+            if (ObjectUtils.isEmpty(service)) {
+                throw new RuntimeException("服务为注册");
+            }
             //通过反射获取到方法
             Method method = service.getClass().getMethod(rpcRequest.getMethodName(), rpcRequest.getParamTypes());
             //执行方法

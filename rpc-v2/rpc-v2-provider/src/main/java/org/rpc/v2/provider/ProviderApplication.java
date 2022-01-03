@@ -3,6 +3,9 @@ package org.rpc.v2.provider;
 import org.rpc.api.HelloService;
 import org.rpc.v2.provider.service.HelloServiceImpl;
 import org.rpc.v2.provider.utils.RpcProxyService;
+import org.rpc.v2.provider.utils.RpcServiceConfig;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * 服务提供者
@@ -14,8 +17,7 @@ public class ProviderApplication {
 
     public static void main(String[] args) {
 
-        RpcProxyService rpcProxyService = new RpcProxyService();
-        HelloService helloService = new HelloServiceImpl();
-        rpcProxyService.register(helloService,8888);
+        AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(RpcServiceConfig.class);
+        context.start();
     }
 }
