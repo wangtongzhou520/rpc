@@ -1,10 +1,6 @@
 package org.rpc.v2.provider;
 
-import org.rpc.api.HelloService;
-import org.rpc.v2.provider.service.HelloServiceImpl;
-import org.rpc.v2.provider.utils.RpcProxyService;
 import org.rpc.v2.provider.utils.RpcServiceConfig;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

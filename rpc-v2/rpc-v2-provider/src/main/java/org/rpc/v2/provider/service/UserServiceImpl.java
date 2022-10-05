@@ -3,8 +3,6 @@ package org.rpc.v2.provider.service;
 import org.rpc.api.User;
 import org.rpc.api.UserService;
 import org.rpc.v2.provider.utils.RpcService;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 /**
  * user

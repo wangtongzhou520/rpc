@@ -13,6 +13,7 @@
         <module>rpc-common</module>
         <module>rpc-v1</module>
         <module>rpc-v2</module>
+        <module>rpc-v3</module>
     </modules>
 
     <properties>
@@ -57,6 +58,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>4.4</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.56.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

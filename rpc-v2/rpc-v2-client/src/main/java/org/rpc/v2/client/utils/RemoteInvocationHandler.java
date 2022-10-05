@@ -34,6 +34,6 @@ public class RemoteInvocationHandler implements InvocationHandler {
                 .build();
         //发送请求
         RpcClient rpcClient = new RpcClient();
-        return ((RpcResponse) rpcClient.send(rpcRequest, host, port)).getData();
+       return ((RpcResponse) rpcClient.send(rpcRequest, host, port)).getData();
     }
 }
