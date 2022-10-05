@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 加载rpc client proxy
  *
- * @author wangtongzhou 18635604249
+ * @author wangtongzhou
  * @since 2022-10-05 16:46
  */
 @Configuration
