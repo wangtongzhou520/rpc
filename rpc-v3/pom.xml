@@ -16,7 +16,6 @@
         <module>rpc-v3-client</module>
         <module>rpc-v3-provider</module>
         <module>rpc-v3-registry</module>
-        <module>rpc-v3-monitor</module>
     </modules>
 
     <properties>

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 线程池监控类
  *
- * @author wangtongzhou 18635604249
+ * @author wangtongzhou
  * @since 2022-02-24 06:53
  */
 public class ThreadPoolMonitor extends ThreadPoolExecutor {
