@@ -1,4 +1,4 @@
-package org.rpc.common;
+package org.rpc.common.netty;
 
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.epoll.EpollEventLoopGroup;

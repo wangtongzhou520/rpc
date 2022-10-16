@@ -10,7 +10,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
-import org.rpc.common.NettyEventLoopFactory;
+import org.rpc.common.netty.NettyEventLoopFactory;
 import org.springframework.stereotype.Component;
 
 import java.net.InetSocketAddress;
@@ -22,6 +22,7 @@ import java.net.InetSocketAddress;
  * @since 2022-01-08 19:05
  */
 @Slf4j
+@Component
 public class NettyServer {
 
     private final EventLoopGroup bossGroup = NettyEventLoopFactory.eventLoopGroup(1,
@@ -43,11 +44,9 @@ public class NettyServer {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_REUSEADDR, Boolean.TRUE)
-                    .childOption(ChannelOption.TCP_NODELAY, Boolean.TRUE)
-                    .childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
-                    //指定每个Channel上注册的ChannelHandler以及顺序
-                    .handler(new LoggingHandler(LogLevel.INFO))
+                    .option(ChannelOption.SO_BACKLOG, 128)
+//                    //指定每个Channel上注册的ChannelHandler以及顺序
+//                    .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new NettyChannelInitializer());
             channelFuture = serverBootstrap.bind(address).syncUninterruptibly();
             channel = channelFuture.channel();

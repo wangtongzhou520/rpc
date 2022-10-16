@@ -15,6 +15,9 @@ import java.io.Serializable;
 @Builder
 public class RpcRequest implements Serializable {
 
+
+    private Long messageId;
+
     /**
      * 接口名称
      */

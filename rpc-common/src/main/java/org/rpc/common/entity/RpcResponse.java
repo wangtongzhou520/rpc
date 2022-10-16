@@ -14,6 +14,8 @@ import java.io.Serializable;
 @Data
 public class RpcResponse<T> implements Serializable {
 
+    private Long messageId;
+
     /**
      * 状态码
      */
