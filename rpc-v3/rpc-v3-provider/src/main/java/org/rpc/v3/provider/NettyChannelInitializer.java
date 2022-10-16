@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 /**
  * 初始化 channel
  *
- * @author wangtongzhou 18635604249
+ * @author wangtongzhou
  * @since 2022-10-06 09:38
  */
 @Component

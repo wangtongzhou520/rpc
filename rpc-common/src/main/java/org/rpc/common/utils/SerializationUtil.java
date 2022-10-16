@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 序列化工具类
  *
- * @author wangtongzhou 18635604249
+ * @author wangtongzhou 
  * @since 2022-10-10 21:38
  */
 public class SerializationUtil {

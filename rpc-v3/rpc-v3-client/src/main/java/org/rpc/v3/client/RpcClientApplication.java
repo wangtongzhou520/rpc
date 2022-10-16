@@ -22,8 +22,7 @@ public class RpcClientApplication {
         ApplicationContext context=new
                 AnnotationConfigApplicationContext(RpcClientConfigV3.class);
         RpcClientProxy rpcClientProxy=context.getBean(RpcClientProxy.class);
-        UserService userService = rpcClientProxy.getProxy(UserService.class, "127" +
-                        ".0.0.1", 8888);
+        UserService userService = rpcClientProxy.getProxy(UserService.class, "127.0.0.1", 8888);
         User result = userService.queryUserInfo();
         log.info(result.toString());
     }
